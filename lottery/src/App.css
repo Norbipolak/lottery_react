@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 10px 0;
+}
+
+.container {
+    max-width: 1080px;
+    margin: auto;
+    padding: 15px;
+}
+
+.lottery-grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    /*
+    Kell adni neki egy width-et ls height-ot, attól függően, hogy mekkorák a benne lévő cellák 
+    a cellák 40*40-esek lesznek, egy sorban lesz 9 -> 9*40=360 lesz a width
+    és lesz 10 sorunk -> 10*40=400 lesz a height 
+    */
+    width: 360px;
+    height: 400px;
+    margin: auto; /*hogy középen legyen*/
+}
+
+.results {
+    width: 360px;
+    padding: 15px;
+    text-align: center;
+    margin: 15px auto;
+    border: 1px solid #d7d7d7;
+}
+
+.cell {
+    border: 1px solid #d7d7d7;
+    /*
+    Mivel, hogy középre kell majd rakni a tartlamat, ezért azt mondjuk, hogy display: flex
+    */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*jobboldalon meg alul duplikálva vannak a bordereink a border miatt és ugye ezek a cell-ek egymás mellett vannak*/
+    margin:0 0 -1px -1px;
+    cursor: pointer;
+}
+
+.selected-cell {
+    /*
+    majd azok fogják megkapni, amik et ki fogunk választani és ezek a cell-ek a táblázatban kapjanak, majd egy bizonyost színt
+    */
+    background-color: #7bdcff;
+}
+
+button {
+    padding: 8px;
+    display: block;
+    margin: 10px auto;
+}
+
